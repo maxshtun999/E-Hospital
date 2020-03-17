@@ -14,8 +14,8 @@ namespace E_Hospital
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            if (Form1.Show() == LoginResult.OK)
-                Application.Run(new Form2());
+            if (LoginForm.Show() == LoginResult.OK)
+                Application.Run(new Mainform());
         }
     }
 }
