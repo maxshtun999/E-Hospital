@@ -1,6 +1,6 @@
 ﻿namespace E_Hospital
 {
-    partial class Mainform
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -39,14 +39,14 @@
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // Mainform
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.textBox1);
-            this.Name = "Mainform";
-            this.Text = "Form2";
+            this.Name = "MainForm";
+            this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
