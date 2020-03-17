@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace E_Hospital
 {
-    public partial class Form2 : Form
+    public partial class Mainform : Form
     {
-        public Form2()
+        public Mainform()
         {
             InitializeComponent();
         }

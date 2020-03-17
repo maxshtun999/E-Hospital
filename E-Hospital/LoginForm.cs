@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace E_Hospital
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
         public new static LoginResult Show()
         {
 
-            Form1 frm = new Form1();
+            LoginForm frm = new LoginForm();
             frm.ShowDialog();
 
             LoginResult ret = frm.LogRes;
@@ -28,7 +28,7 @@ namespace E_Hospital
         public static PassResult Pass()
         {
 
-            Form1 frm = new Form1();
+            LoginForm frm = new LoginForm();
             frm.ShowDialog();
 
             PassResult ret = frm.PassRes;
@@ -38,7 +38,7 @@ namespace E_Hospital
         }
         public PassResult PassRes = PassResult.NotStarted;
 
-        public Form1()
+        public LoginForm()
         {
             InitializeComponent();
         }
