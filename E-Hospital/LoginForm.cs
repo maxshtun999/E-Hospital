@@ -23,7 +23,7 @@ namespace E_Hospital
             //Connection with Azure Server to check login identity Aliagha
             SqlConnection sqlConnection = new SqlConnection(
                 @"Server=tcp:ehospitalserver.database.windows.net,1433;
-                Initial Catalog=DoctorLoginDB;
+                Initial Catalog=E-HospitalDb;
                 Persist Security Info=False;
                 User ID=ehospitaladmin;
                 Password=MaxAliSashaMikita4;
@@ -48,6 +48,11 @@ namespace E_Hospital
             {
                 MessageBox.Show("Check your Username and Password!");
             }
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
