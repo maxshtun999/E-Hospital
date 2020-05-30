@@ -34,7 +34,7 @@ namespace E_Hospital
         private void button2_Click(object sender, EventArgs e)
         {
             sqlConnection.Open();
-            String query = "INSERT INTO PatientInformation (PatientFullName,Address,DateofBirth,Gender,Email,Telephone,Notes) VALUES('"+ textBox1.Text + "','" + textBox2.Text + "','" + dateTimePicker1.Text + "','" + checkedListBox1.Text + "','" + textBox4.Text + "','" + textBox3.Text + "','" + textBox5.Text + "')";
+            String query = "INSERT INTO PatientInformation (PatientFullName,Address,DateofBirth,Gender,Email,Telephone,Notes) VALUES('" + textBox1.Text + "','" + textBox2.Text + "','" + dateTimePicker1.Text + "','" + checkedListBox1.Text + "','" + textBox4.Text + "','" + textBox3.Text + "','" + textBox5.Text + "')";
             SqlDataAdapter SDA = new SqlDataAdapter(query, sqlConnection);
             SDA.SelectCommand.ExecuteNonQuery();
             sqlConnection.Close();
@@ -99,6 +99,41 @@ namespace E_Hospital
             sqlConnection.Close();
             MessageBox.Show("Record deleted!");
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            InitializeComponent();
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm login = new LoginForm();
+            login.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            IdForm idform = new IdForm();
+            this.Hide();
+            idform.Show();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            DialogResult dialog = MessageBox.Show("Do you want to close the application?",
+                "Exit", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                Application.ExitThread();
+            }
+            else if (dialog == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
-    
+
 }

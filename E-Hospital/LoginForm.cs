@@ -40,17 +40,41 @@ namespace E_Hospital
 
             if (dataTable.Rows.Count == 1)
             {
-                MainForm objMainForm = new MainForm();
+                IdForm idform = new IdForm();
                 this.Hide();
-                objMainForm.Show();
+                idform.Show();
+                
+            }
+            else if (txtUsername.TextLength == 0 || txtPassword.TextLength == 0)
+            {
+                MessageBox.Show("Please enter username and password!", "Error");
             }
             else
             {
-                MessageBox.Show("Check your Username and Password!");
+                MessageBox.Show("Wrong username or password!", "Error");
             }
         }
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Do you want to close the application?",
+                "Exit", MessageBoxButtons.YesNo);
+            if(dialog == DialogResult.Yes)
+            {
+                Application.ExitThread();
+            }
+            else if (dialog == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
         {
 
         }
