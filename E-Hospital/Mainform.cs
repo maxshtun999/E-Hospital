@@ -134,6 +134,11 @@ namespace E_Hospital
                 e.Cancel = true;
             }
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

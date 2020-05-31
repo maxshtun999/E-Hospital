@@ -63,7 +63,19 @@ namespace E_Hospital
             }
             else
             {
-                MessageBox.Show("Patient doesn't exists!", "Error");
+                DialogResult dialog = MessageBox.Show("Patient doesn't exist, do you want to create new?",
+                 "Error", MessageBoxButtons.YesNo);
+                if (dialog == DialogResult.Yes)
+                {
+                    this.Hide();
+                    MainForm mainform = new MainForm();
+                    mainform.Show();
+                }
+                else if (dialog == DialogResult.No)
+                {
+                  
+                }
+
             }
 
 
