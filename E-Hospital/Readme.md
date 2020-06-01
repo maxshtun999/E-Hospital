@@ -20,4 +20,4 @@ TODO list:
 
 8. Make Update and Delete impossible if there is no entered data;
 
-10. Change the color scheme of hole app to make it more sexy.
+10. Change the color scheme of hole app to make it more sexy.  Done
