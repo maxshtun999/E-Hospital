@@ -28,8 +28,8 @@ namespace E_Hospital
         private void button1_Click(object sender, EventArgs e)
         {
 
-          
-            
+
+
 
             SqlConnection sqlConnection = new SqlConnection(
                 @"Server=tcp:ehospitalserver.database.windows.net,1433;
@@ -51,10 +51,10 @@ namespace E_Hospital
 
             if (dataTable.Rows.Count >= 1)
             {
-               /* // редирект на меинформ при поиске, пока что не работает, потом допилю
-                this.Hide();
-                MainForm mainform = new MainForm();
-                mainform.Show();*/
+                /* // редирект на меинформ при поиске, пока что не работает, потом допилю
+                 this.Hide();
+                 MainForm mainform = new MainForm();
+                 mainform.Show();*/
                 dataGridView1.DataSource = dataTable;
             }
             else if (textBox1.TextLength == 0)
@@ -71,10 +71,6 @@ namespace E_Hospital
                     MainForm mainform = new MainForm();
                     mainform.Show();
                 }
-                else if (dialog == DialogResult.No)
-                {
-                  
-                }
 
             }
 
@@ -83,9 +79,15 @@ namespace E_Hospital
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            LoginForm login = new LoginForm();
-            login.Show();
+            DialogResult dialog = MessageBox.Show("Do you want to sign out for sure?",
+         "Sign out", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                this.Hide();
+                LoginForm login = new LoginForm();
+                login.Show();
+            }
+ 
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

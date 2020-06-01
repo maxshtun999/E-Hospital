@@ -108,9 +108,14 @@ namespace E_Hospital
 
         private void button8_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            LoginForm login = new LoginForm();
-            login.Show();
+            DialogResult dialog = MessageBox.Show("Do you want to sign out for sure?",
+             "Sign out", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                this.Hide();
+                LoginForm login = new LoginForm();
+                login.Show();
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
