@@ -16,10 +16,12 @@ namespace E_Hospital
         public LoginForm()
         {
             InitializeComponent();
+            MaximizeBox = false;
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
+            LoginButton.BackColor = Color.DarkCyan;
             //Connection with Azure Server to check login identity Aliagha
             SqlConnection sqlConnection = new SqlConnection(
                 @"Server=tcp:ehospitalserver.database.windows.net,1433;
@@ -78,5 +80,6 @@ namespace E_Hospital
         {
 
         }
+
     }
 }

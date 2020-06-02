@@ -29,55 +29,64 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            this.LoginButton = new System.Windows.Forms.Button();
-            this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.LoginButton = new System.Windows.Forms.Button();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblSignIn = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // LoginButton
-            // 
-            this.LoginButton.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.LoginButton, "LoginButton");
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.UseVisualStyleBackColor = false;
-            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.BackColor = System.Drawing.SystemColors.HighlightText;
-            resources.ApplyResources(this.txtUsername, "txtUsername");
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // txtPassword
             // 
-            this.txtPassword.BackColor = System.Drawing.SystemColors.HighlightText;
             resources.ApplyResources(this.txtPassword, "txtPassword");
+            this.txtPassword.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
-            // label1
+            // txtUsername
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.txtUsername, "txtUsername");
+            this.txtUsername.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
-            // label2
+            // lblUsername
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.lblUsername, "lblUsername");
+            this.lblUsername.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblUsername.Name = "lblUsername";
+            // 
+            // LoginButton
+            // 
+            resources.ApplyResources(this.LoginButton, "LoginButton");
+            this.LoginButton.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.LoginButton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.LoginButton.Name = "LoginButton";
+            this.LoginButton.UseVisualStyleBackColor = false;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            // 
+            // lblPassword
+            // 
+            resources.ApplyResources(this.lblPassword, "lblPassword");
+            this.lblPassword.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblPassword.Name = "lblPassword";
+            // 
+            // lblSignIn
+            // 
+            resources.ApplyResources(this.lblSignIn, "lblSignIn");
+            this.lblSignIn.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblSignIn.Name = "lblSignIn";
             // 
             // LoginForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.Controls.Add(this.lblSignIn);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.LoginButton);
@@ -89,12 +98,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button LoginButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Button LoginButton;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblSignIn;
     }
 }
 
