@@ -17,6 +17,7 @@ namespace E_Hospital
         {
             InitializeComponent();
             MaximizeBox = false;
+
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
