@@ -43,12 +43,35 @@ namespace E_Hospital
 
         private void button3_Click(object sender, EventArgs e)
         {
-            sqlConnection.Open();
-            string query = "UPDATE PatientInformation SET PatientFullName = '" + textBox1.Text + "',Address = '" + textBox2.Text + "', DateofBirth = '" + dateTimePicker1.Text + "', Gender = '" + checkedListBox1.Text + "', Email = '" + textBox4.Text + "',Telephone = '" + textBox3.Text + "', Notes = '" + textBox5.Text + "'";
-            SqlDataAdapter SDA = new SqlDataAdapter(query, sqlConnection);
-            SDA.SelectCommand.ExecuteNonQuery();
-            sqlConnection.Close();
-            MessageBox.Show("Update successfull! ");
+            if (textBox1.TextLength == 0)
+            {
+                MessageBox.Show("Please enter Name to Update!");
+            }
+            else if (textBox2.TextLength == 0)
+            {
+                MessageBox.Show("Please enter Address to Update!");
+            }
+            else if (checkedListBox1 == null)
+            {
+                MessageBox.Show("Please Choose Gender to Update!");
+            }
+            else if (textBox3.TextLength == 0)
+            {
+                MessageBox.Show("Please enter Phone to Update!");
+            }
+            else if (textBox5.TextLength == 0)
+            {
+                MessageBox.Show("Please enter Notes to Update!");
+            }
+            else
+            {
+                sqlConnection.Open();
+                string query = "UPDATE PatientInformation SET PatientFullName = '" + textBox1.Text + "',Address = '" + textBox2.Text + "', DateofBirth = '" + dateTimePicker1.Text + "', Gender = '" + checkedListBox1.Text + "', Email = '" + textBox4.Text + "',Telephone = '" + textBox3.Text + "', Notes = '" + textBox5.Text + "'";
+                SqlDataAdapter SDA = new SqlDataAdapter(query, sqlConnection);
+                SDA.SelectCommand.ExecuteNonQuery();
+                sqlConnection.Close();
+                MessageBox.Show("Update successfull! ");
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -92,12 +115,19 @@ namespace E_Hospital
 
         private void button4_Click(object sender, EventArgs e)
         {
-            sqlConnection.Open();
-            String query = "DELETE FROM PatientInformation where PatientFullName = '" + textBox1.Text + "'";
-            SqlDataAdapter SDA = new SqlDataAdapter(query, sqlConnection);
-            SDA.SelectCommand.ExecuteNonQuery();
-            sqlConnection.Close();
-            MessageBox.Show("Record deleted!");
+            if (textBox1.TextLength == 0)
+            {
+                MessageBox.Show("Please Enter name to Delete!");
+            }
+            else
+            {
+                sqlConnection.Open();
+                String query = "DELETE FROM PatientInformation where PatientFullName = '" + textBox1.Text + "'";
+                SqlDataAdapter SDA = new SqlDataAdapter(query, sqlConnection);
+                SDA.SelectCommand.ExecuteNonQuery();
+                sqlConnection.Close();
+                MessageBox.Show("Record deleted!");
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
