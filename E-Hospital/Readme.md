@@ -16,7 +16,7 @@ TODO list:
 
 ~~6. MainForm signOut button confirmation;~~
 
-7. Crash while entering string instead of int in IDsearch form;
+~~7. Crash while entering string instead of int in IDsearch form;~~
 
  ̶8̶.̶ ̶M̶a̶k̶e̶ ̶U̶p̶d̶a̶t̶e̶ ̶a̶n̶d̶ ̶D̶e̶l̶e̶t̶e̶ ̶i̶m̶p̶o̶s̶s̶i̶b̶l̶e̶ ̶i̶f̶ ̶t̶h̶e̶r̶e̶ ̶i̶s̶ ̶n̶o̶ ̶e̶n̶t̶e̶r̶e̶d̶ ̶d̶a̶t̶a̶;̶
 

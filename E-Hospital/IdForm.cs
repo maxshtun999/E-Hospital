@@ -27,7 +27,7 @@ namespace E_Hospital
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+        
 
 
 
@@ -119,6 +119,15 @@ namespace E_Hospital
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if(!Char.IsDigit(ch) && ch != 8 && ch !=46)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
