@@ -12,7 +12,7 @@ TODO list:
 
 4. SignIn and searchId button not only on click, but also onKeyPress;
 
-~~ 5. Crash while saving empty data;~~
+~~5. Crash while saving empty data;~~
 
 ~~6. MainForm signOut button confirmation;~~
 
