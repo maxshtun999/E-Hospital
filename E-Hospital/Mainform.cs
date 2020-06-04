@@ -33,35 +33,55 @@ namespace E_Hospital
 
         private void button2_Click(object sender, EventArgs e)
         {
-            sqlConnection.Open();
-            String query = "INSERT INTO PatientInformation (PatientFullName,Address,DateofBirth,Gender,Email,Telephone,Notes) VALUES('" + textBox1.Text + "','" + textBox2.Text + "','" + dateTimePicker1.Text + "','" + checkedListBox1.Text + "','" + textBox4.Text + "','" + textBox3.Text + "','" + textBox5.Text + "')";
-            SqlDataAdapter SDA = new SqlDataAdapter(query, sqlConnection);
-            SDA.SelectCommand.ExecuteNonQuery();
-            sqlConnection.Close();
-            MessageBox.Show("Inserted Succesfully!");
+
+            if (textBox1.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to save the patient!");
+            }
+            else if (textBox2.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to save the patient!");
+            }
+            else if (checkedListBox1 == null)
+            {
+                MessageBox.Show("Please fill all the fields to save the patient!");
+            }
+            else if (textBox3.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to save the patient!");
+            }
+            else if(textBox4.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to save the patient!");
+            }
+            else if (textBox5.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to save the patient!");
+            }
+            else
+            {
+                sqlConnection.Open();
+                String query = "INSERT INTO PatientInformation (PatientFullName,Address,DateofBirth,Gender,Email,Telephone,Notes) VALUES('" + textBox1.Text + "','" + textBox2.Text + "','" + dateTimePicker1.Text + "','" + checkedListBox1.Text + "','" + textBox4.Text + "','" + textBox3.Text + "','" + textBox5.Text + "')";
+                SqlDataAdapter SDA = new SqlDataAdapter(query, sqlConnection);
+                SDA.SelectCommand.ExecuteNonQuery();
+                sqlConnection.Close();
+                MessageBox.Show("Patient saved successfully!");
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             if (textBox1.TextLength == 0)
             {
-                MessageBox.Show("Please enter Name to Update!");
-            }
-            else if (textBox2.TextLength == 0)
-            {
-                MessageBox.Show("Please enter Address to Update!");
-            }
-            else if (checkedListBox1 == null)
-            {
-                MessageBox.Show("Please Choose Gender to Update!");
+                MessageBox.Show("Please enter name to update patient's info!");
             }
             else if (textBox3.TextLength == 0)
             {
-                MessageBox.Show("Please enter Phone to Update!");
+                MessageBox.Show("Please enter phone number to  to update patient's info!!");
             }
             else if (textBox5.TextLength == 0)
             {
-                MessageBox.Show("Please enter Notes to Update!");
+                MessageBox.Show("Please enter the notes to update them!");
             }
             else
             {
@@ -70,7 +90,7 @@ namespace E_Hospital
                 SqlDataAdapter SDA = new SqlDataAdapter(query, sqlConnection);
                 SDA.SelectCommand.ExecuteNonQuery();
                 sqlConnection.Close();
-                MessageBox.Show("Update successfull! ");
+                MessageBox.Show("Patient data updated successfully!");
             }
         }
 
@@ -126,7 +146,7 @@ namespace E_Hospital
                 SqlDataAdapter SDA = new SqlDataAdapter(query, sqlConnection);
                 SDA.SelectCommand.ExecuteNonQuery();
                 sqlConnection.Close();
-                MessageBox.Show("Record deleted!");
+                MessageBox.Show("Medical card deleted!");
             }
         }
 
@@ -171,6 +191,11 @@ namespace E_Hospital
         }
 
         private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
         }
