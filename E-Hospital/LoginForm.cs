@@ -58,41 +58,11 @@ namespace E_Hospital
             }
         }
 
-        private void LoginButton_KeyPress(object sender, KeyPressEventArgs e)
+        private void LoginButton_KeyDown(object sender, KeyEventArgs e)
         {
-            LoginButton.BackColor = Color.DarkCyan;
-            //Connection with Azure Server to check login identity Aliagha
-            SqlConnection sqlConnection = new SqlConnection(
-                @"Server=tcp:ehospitalserver.database.windows.net,1433;
-                Initial Catalog=E-HospitalDb;
-                Persist Security Info=False;
-                User ID=ehospitaladmin;
-                Password=MaxAliSashaMikita4;
-                MultipleActiveResultSets=False;
-                Encrypt=True;
-                TrustServerCertificate=False;
-                Connection Timeout=30;");
-            string query = "Select * from Login Where Username = '" + txtUsername.Text.Trim() + "' and Password ='" +
-                           txtPassword.Text.Trim() + "'";
-
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
-            DataTable dataTable = new DataTable();
-            sqlDataAdapter.Fill(dataTable);
-
-            if (dataTable.Rows.Count == 1)
+            if (e.KeyCode == Keys.Enter)
             {
-                IdForm idform = new IdForm();
-                this.Hide();
-                idform.Show();
-
-            }
-            else if (txtUsername.TextLength == 0 || txtPassword.TextLength == 0)
-            {
-                MessageBox.Show("Please enter username and password!", "Error");
-            }
-            else
-            {
-                MessageBox.Show("Wrong username or password!", "Error");
+                LoginButton.Focus();
             }
         }
 
@@ -117,10 +87,16 @@ namespace E_Hospital
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-
+           
         }
 
-
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoginButton.PerformClick();
+            }
+        }
     }
 }
 
