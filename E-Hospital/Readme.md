@@ -10,7 +10,7 @@ TODO list:
 
 ~~3. Make it fully responsive (especially while rescaling(example: logIn form));~~
 
-4. SignIn and searchId button not only on click, but also onKeyPress;
+~~4. SignIn and searchId button not only on click, but also onKeyPress;~~
 
 ~~5. Crash while saving empty data;~~
 
