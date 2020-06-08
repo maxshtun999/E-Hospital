@@ -135,43 +135,49 @@
             // button2
             // 
             resources.ApplyResources(this.button2, "button2");
+            this.button2.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             resources.ApplyResources(this.button3, "button3");
+            this.button3.BackColor = System.Drawing.Color.DodgerBlue;
             this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
             resources.ApplyResources(this.button4, "button4");
+            this.button4.BackColor = System.Drawing.Color.IndianRed;
             this.button4.Name = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
             resources.ApplyResources(this.button5, "button5");
+            this.button5.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button5.Name = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button7
             // 
             resources.ApplyResources(this.button7, "button7");
+            this.button7.BackColor = System.Drawing.Color.LightPink;
             this.button7.Name = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
             resources.ApplyResources(this.button8, "button8");
+            this.button8.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button8.Name = "button8";
-            this.button8.UseVisualStyleBackColor = true;
+            this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // label7

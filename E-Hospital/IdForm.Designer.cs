@@ -56,7 +56,8 @@
             // button1
             // 
             resources.ApplyResources(this.button1, "button1");
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -64,15 +65,18 @@
             // button2
             // 
             resources.ApplyResources(this.button2, "button2");
+            this.button2.BackColor = System.Drawing.SystemColors.Window;
             this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             resources.ApplyResources(this.button3, "button3");
+            this.button3.BackColor = System.Drawing.Color.LightCoral;
+            this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // dataGridView1

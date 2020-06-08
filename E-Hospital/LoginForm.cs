@@ -46,7 +46,45 @@ namespace E_Hospital
                 IdForm idform = new IdForm();
                 this.Hide();
                 idform.Show();
-                
+
+            }
+            else if (txtUsername.TextLength == 0 || txtPassword.TextLength == 0)
+            {
+                MessageBox.Show("Please enter username and password!", "Error");
+            }
+            else
+            {
+                MessageBox.Show("Wrong username or password!", "Error");
+            }
+        }
+
+        private void LoginButton_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            LoginButton.BackColor = Color.DarkCyan;
+            //Connection with Azure Server to check login identity Aliagha
+            SqlConnection sqlConnection = new SqlConnection(
+                @"Server=tcp:ehospitalserver.database.windows.net,1433;
+                Initial Catalog=E-HospitalDb;
+                Persist Security Info=False;
+                User ID=ehospitaladmin;
+                Password=MaxAliSashaMikita4;
+                MultipleActiveResultSets=False;
+                Encrypt=True;
+                TrustServerCertificate=False;
+                Connection Timeout=30;");
+            string query = "Select * from Login Where Username = '" + txtUsername.Text.Trim() + "' and Password ='" +
+                           txtPassword.Text.Trim() + "'";
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
+            DataTable dataTable = new DataTable();
+            sqlDataAdapter.Fill(dataTable);
+
+            if (dataTable.Rows.Count == 1)
+            {
+                IdForm idform = new IdForm();
+                this.Hide();
+                idform.Show();
+
             }
             else if (txtUsername.TextLength == 0 || txtPassword.TextLength == 0)
             {
@@ -67,7 +105,7 @@ namespace E_Hospital
         {
             DialogResult dialog = MessageBox.Show("Do you want to close the application?",
                 "Exit", MessageBoxButtons.YesNo);
-            if(dialog == DialogResult.Yes)
+            if (dialog == DialogResult.Yes)
             {
                 Application.ExitThread();
             }
@@ -82,5 +120,7 @@ namespace E_Hospital
 
         }
 
+
     }
 }
+
