@@ -23,3 +23,7 @@ TODO list:
 ~~10. Change the color scheme of hole app to make it more sexy.~~
 
 ~~11. "Cannot insert value NULL in PatientID column" error while saving user.~~
+
+12. Update user by click choosing his row in DB.
+
+13. Delete user by click choosing his row in DB.
