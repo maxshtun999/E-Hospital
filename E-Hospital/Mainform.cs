@@ -60,22 +60,33 @@ namespace E_Hospital
             }
             else
             {
-                sqlConnection.Open();
-                String query = "INSERT INTO PatientInformation (PatientFullName,Address,DateofBirth,Gender,Email,Telephone,Notes) VALUES('" + textBox1.Text + "','" + textBox2.Text + "','" + dateTimePicker1.Text + "','" + checkedListBox1.Text + "','" + textBox4.Text + "','" + textBox3.Text + "','" + textBox5.Text + "')";
-                SqlDataAdapter SDA = new SqlDataAdapter(query, sqlConnection);
-                SDA.SelectCommand.ExecuteNonQuery();
-                sqlConnection.Close();
-                MessageBox.Show("Patient saved successfully!");
-
-                textBox1.Text = "";
-                textBox2.Text = "";
-                while (checkedListBox1.CheckedIndices.Count > 0)
+                string pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+                if (Regex.IsMatch(textBox4.Text, pattern))
                 {
-                    checkedListBox1.SetItemChecked(checkedListBox1.CheckedIndices[0], false);
+                    errorProvider1.Clear();
+                
+                    sqlConnection.Open();
+                    String query = "INSERT INTO PatientInformation (PatientFullName,Address,DateofBirth,Gender,Email,Telephone,Notes) VALUES('" + textBox1.Text + "','" + textBox2.Text + "','" + dateTimePicker1.Text + "','" + checkedListBox1.Text + "','" + textBox4.Text + "','" + textBox3.Text + "','" + textBox5.Text + "')";
+                    SqlDataAdapter SDA = new SqlDataAdapter(query, sqlConnection);
+                    SDA.SelectCommand.ExecuteNonQuery();
+                    sqlConnection.Close();
+                    MessageBox.Show("Patient saved successfully!");
+
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    while (checkedListBox1.CheckedIndices.Count > 0)
+                    {
+                        checkedListBox1.SetItemChecked(checkedListBox1.CheckedIndices[0], false);
+                    }
+                    textBox3.Text = "";
+                    textBox4.Text = "";
+                    textBox5.Text = "";
                 }
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
+                else
+                {
+                    errorProvider1.SetError(this.textBox4, "Please provide correct email address");
+                    return;
+                }
             }
         }
 
@@ -228,18 +239,9 @@ namespace E_Hospital
             }
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void textBox4_Leave(object sender, EventArgs e)
         {
-            string pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
-            if (Regex.IsMatch(textBox4.Text, pattern))
-            {
-                errorProvider1.Clear();
-            }
-            else
-            {
-                errorProvider1.SetError(this.textBox4, "Please provide correct email address");
-                return;
-            }
+            
         }
     }
 
