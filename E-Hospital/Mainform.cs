@@ -228,7 +228,7 @@ namespace E_Hospital
             }
         }
 
-        private void textBox4_Leave(object sender, EventArgs e)
+        private void textBox4_TextChanged(object sender, EventArgs e)
         {
             string pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
             if (Regex.IsMatch(textBox4.Text, pattern))
@@ -240,11 +240,6 @@ namespace E_Hospital
                 errorProvider1.SetError(this.textBox4, "Please provide correct email address");
                 return;
             }
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 
