@@ -99,6 +99,16 @@ namespace E_Hospital
                 string query = "UPDATE PatientInformation SET PatientFullName = '" + textBox1.Text + "',Address = '" + textBox2.Text + "', DateofBirth = '" + dateTimePicker1.Text + "', Gender = '" + checkedListBox1.Text + "', Email = '" + textBox4.Text + "',Telephone = '" + textBox3.Text + "', Notes = '" + textBox5.Text + "'";
                 SqlDataAdapter SDA = new SqlDataAdapter(query, sqlConnection);
                 SDA.SelectCommand.ExecuteNonQuery();
+                String query2 = "SELECT PatientFullName, Address, DateofBirth, Gender, Email, Telephone FROM PatientInformation";
+                string query1 = "SELECT Notes FROM PatientInformation";
+                SqlDataAdapter SDA2 = new SqlDataAdapter(query2, sqlConnection);
+                SqlDataAdapter SDA1 = new SqlDataAdapter(query1, sqlConnection);
+                DataTable dt = new DataTable();
+                DataTable dt1 = new DataTable();
+                SDA2.Fill(dt);
+                SDA1.Fill(dt1);
+                dataGridView1.DataSource = dt;
+                dataGridView2.DataSource = dt1;
                 sqlConnection.Close();
                 MessageBox.Show("Patient data updated successfully!");
             }
@@ -155,6 +165,16 @@ namespace E_Hospital
                 String query = "DELETE FROM PatientInformation where PatientFullName = '" + textBox1.Text + "'";
                 SqlDataAdapter SDA = new SqlDataAdapter(query, sqlConnection);
                 SDA.SelectCommand.ExecuteNonQuery();
+                String query2 = "SELECT PatientFullName, Address, DateofBirth, Gender, Email, Telephone FROM PatientInformation";
+                string query1 = "SELECT Notes FROM PatientInformation";
+                SqlDataAdapter SDA2 = new SqlDataAdapter(query2, sqlConnection);
+                SqlDataAdapter SDA1 = new SqlDataAdapter(query1, sqlConnection);
+                DataTable dt = new DataTable();
+                DataTable dt1 = new DataTable();
+                SDA2.Fill(dt);
+                SDA1.Fill(dt1);
+                dataGridView1.DataSource = dt;
+                dataGridView2.DataSource = dt1;
                 sqlConnection.Close();
                 MessageBox.Show("Medical card deleted!");
             }
@@ -163,7 +183,6 @@ namespace E_Hospital
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             InitializeComponent();
-
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -200,36 +219,6 @@ namespace E_Hospital
             }
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
@@ -241,16 +230,21 @@ namespace E_Hospital
 
         private void textBox4_Leave(object sender, EventArgs e)
         {
-          /*  string pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+            string pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
             if (Regex.IsMatch(textBox4.Text, pattern))
             {
                 errorProvider1.Clear();
             }
             else
             {
-                errorProvider1.setError(this.textBox4, "Please provide correct email address");
+                errorProvider1.SetError(this.textBox4, "Please provide correct email address");
                 return;
-            }*/
+            }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 
