@@ -66,6 +66,7 @@
             // 
             resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -82,6 +83,7 @@
             resources.GetString("checkedListBox1.Items"),
             resources.GetString("checkedListBox1.Items1")});
             this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -120,12 +122,15 @@
             // 
             resources.ApplyResources(this.textBox3, "textBox3");
             this.textBox3.Name = "textBox3";
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // textBox4
             // 
             resources.ApplyResources(this.textBox4, "textBox4");
             this.textBox4.Name = "textBox4";
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textBox4.Leave += new System.EventHandler(this.textBox4_Leave);
             // 
             // textBox5
             // 
@@ -190,6 +195,7 @@
             // dataGridView1
             // 
             resources.ApplyResources(this.dataGridView1, "dataGridView1");
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -200,10 +206,12 @@
             // 
             resources.ApplyResources(this.dateTimePicker1, "dateTimePicker1");
             this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // dataGridView2
             // 
             resources.ApplyResources(this.dataGridView2, "dataGridView2");
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
