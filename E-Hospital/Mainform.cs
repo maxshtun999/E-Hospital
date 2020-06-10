@@ -69,6 +69,16 @@ namespace E_Hospital
                     String query = "INSERT INTO PatientInformation (PatientFullName,Address,DateofBirth,Gender,Email,Telephone,Notes) VALUES('" + textBox1.Text + "','" + textBox2.Text + "','" + dateTimePicker1.Text + "','" + checkedListBox1.Text + "','" + textBox4.Text + "','" + textBox3.Text + "','" + textBox5.Text + "')";
                     SqlDataAdapter SDA = new SqlDataAdapter(query, sqlConnection);
                     SDA.SelectCommand.ExecuteNonQuery();
+                    String query2 = "SELECT PatientFullName, Address, DateofBirth, Gender, Email, Telephone FROM PatientInformation";
+                    string query1 = "SELECT Notes FROM PatientInformation";
+                    SqlDataAdapter SDA2 = new SqlDataAdapter(query2, sqlConnection);
+                    SqlDataAdapter SDA1 = new SqlDataAdapter(query1, sqlConnection);
+                    DataTable dt = new DataTable();
+                    DataTable dt1 = new DataTable();
+                    SDA2.Fill(dt);
+                    SDA1.Fill(dt1);
+                    dataGridView1.DataSource = dt;
+                    dataGridView2.DataSource = dt1;
                     sqlConnection.Close();
                     MessageBox.Show("Patient saved successfully!");
 
