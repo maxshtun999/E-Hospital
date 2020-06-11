@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using System.Text.RegularExpressions;
 
 namespace E_Hospital
 {
@@ -39,15 +39,57 @@ namespace E_Hospital
         //Save
         private void btnSave_Click(object sender, EventArgs e)
         {
-            sqlConnection.Open();
-            sqlCommand = new SqlCommand
-            ("insert into PatientInformation values('" + txtFullname.Text + "','" + txtHomeAddress.Text + "','" + txtPostalCode.Text + "','" + dtDateOfBirth.Text + "','" + checkBoxSex.Text + "','" + txtEmail.Text + "', '" + txtTelephone.Text + "','" + txtNotes.Text + "'  )",
-                sqlConnection);
-            sqlCommand.ExecuteNonQuery();
-            MessageBox.Show("Your data has been saved in the database!");
-            sqlConnection.Close();
-            DisplayData();
-            Clear();
+            if (txtFullname.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to save the patient!");
+            }
+            else if (txtHomeAddress.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to save the patient!");
+            }
+            else if (dtDateOfBirth == null)
+            {
+                MessageBox.Show("Please fill all the fields to save the patient!");
+            }
+            else if (txtEmail.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to save the patient!");
+            }
+            else if (txtTelephone.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to save the patient!");
+            }
+            else if (txtNotes.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to save the patient!");
+            }
+            else if (txtPostalCode.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to save the patient!");
+            }
+            else
+            {
+                string pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+                if (Regex.IsMatch(txtEmail.Text, pattern))
+                {
+                    errorProvider1.Clear();
+                    sqlConnection.Open();
+                    sqlCommand = new SqlCommand
+                    ("insert into PatientInformation values('" + txtFullname.Text + "','" + txtHomeAddress.Text + "','" + txtPostalCode.Text + "','" + dtDateOfBirth.Text + "','" + checkBoxSex.Text + "','" + txtEmail.Text + "', '" + txtTelephone.Text + "','" + txtNotes.Text + "'  )",
+                    sqlConnection);
+                    sqlCommand.ExecuteNonQuery();
+                    MessageBox.Show("Your data has been saved in the database!");
+                    sqlConnection.Close();
+                    DisplayData();
+                    Clear();
+                }
+                else
+                {
+                    errorProvider1.SetError(this.txtEmail, "Please provide correct email address");
+                    return;
+                }
+            }
+
         }
 
         public void DisplayData()
@@ -145,6 +187,14 @@ namespace E_Hospital
             txtTelephone.Text = dataListOf.Rows[e.RowIndex].Cells[7].Value.ToString();
             txtNotes.Text = dataListOf.Rows[e.RowIndex].Cells[8].Value.ToString();
         }
-    }
 
+        private void txtTelephone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
+        }
+    }
 }

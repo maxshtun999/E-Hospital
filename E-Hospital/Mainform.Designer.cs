@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblFullname = new System.Windows.Forms.Label();
             this.txtFullname = new System.Windows.Forms.TextBox();
             this.lblSex = new System.Windows.Forms.Label();
@@ -51,7 +52,9 @@
             this.txtPostalCode = new System.Windows.Forms.TextBox();
             this.lblPostalCode = new System.Windows.Forms.Label();
             this.lblEHospital = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataListOf)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFullname
@@ -201,7 +204,6 @@
             this.btnUpdate.TabIndex = 15;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -213,7 +215,6 @@
             this.btnDelete.TabIndex = 16;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSearchAnotherUser
             // 
@@ -225,7 +226,6 @@
             this.btnSearchAnotherUser.TabIndex = 21;
             this.btnSearchAnotherUser.Text = "Search Another User";
             this.btnSearchAnotherUser.UseVisualStyleBackColor = false;
-            this.btnSearchAnotherUser.Click += new System.EventHandler(this.btnSearchAnotherUser_Click);
             // 
             // btnSignOut
             // 
@@ -237,7 +237,6 @@
             this.btnSignOut.TabIndex = 22;
             this.btnSignOut.Text = "Sign Out";
             this.btnSignOut.UseVisualStyleBackColor = false;
-            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
             // 
             // lblDateOfBirth
             // 
@@ -268,7 +267,6 @@
             this.dataListOf.Name = "dataListOf";
             this.dataListOf.Size = new System.Drawing.Size(756, 240);
             this.dataListOf.TabIndex = 27;
-            this.dataListOf.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListOf_CellDoubleClick);
             // 
             // txtPostalCode
             // 
@@ -304,6 +302,10 @@
             this.lblEHospital.TabIndex = 30;
             this.lblEHospital.Text = "E-Hospital";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -336,8 +338,8 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Dashboard";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataListOf)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -368,5 +370,6 @@
         private System.Windows.Forms.TextBox txtPostalCode;
         private System.Windows.Forms.Label lblPostalCode;
         private System.Windows.Forms.Label lblEHospital;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
