@@ -35,6 +35,7 @@
             this.LoginButton = new System.Windows.Forms.Button();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblSignIn = new System.Windows.Forms.Label();
+            this.lblEHospital = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtPassword
@@ -81,11 +82,19 @@
             this.lblSignIn.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.lblSignIn.Name = "lblSignIn";
             // 
+            // lblEHospital
+            // 
+            resources.ApplyResources(this.lblEHospital, "lblEHospital");
+            this.lblEHospital.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblEHospital.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblEHospital.Name = "lblEHospital";
+            // 
             // LoginForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Gainsboro;
+            this.Controls.Add(this.lblEHospital);
             this.Controls.Add(this.lblSignIn);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
@@ -106,6 +115,7 @@
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblSignIn;
+        private System.Windows.Forms.Label lblEHospital;
     }
 }
 

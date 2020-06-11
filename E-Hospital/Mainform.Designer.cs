@@ -28,219 +28,316 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblFullname = new System.Windows.Forms.Label();
+            this.txtFullname = new System.Windows.Forms.TextBox();
+            this.lblSex = new System.Windows.Forms.Label();
+            this.checkBoxSex = new System.Windows.Forms.CheckedListBox();
+            this.lblHomeAddress = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.txtHomeAddress = new System.Windows.Forms.TextBox();
+            this.txtTelephone = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtNotes = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSearchAnotherUser = new System.Windows.Forms.Button();
+            this.btnSignOut = new System.Windows.Forms.Button();
+            this.lblDateOfBirth = new System.Windows.Forms.Label();
+            this.dtDateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.dataListOf = new System.Windows.Forms.DataGridView();
+            this.txtPostalCode = new System.Windows.Forms.TextBox();
+            this.lblPostalCode = new System.Windows.Forms.Label();
+            this.lblEHospital = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListOf)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblFullname
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.BackColor = System.Drawing.SystemColors.Menu;
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Name = "label1";
+            this.lblFullname.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFullname.AutoSize = true;
+            this.lblFullname.BackColor = System.Drawing.SystemColors.Menu;
+            this.lblFullname.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblFullname.Location = new System.Drawing.Point(103, 108);
+            this.lblFullname.Name = "lblFullname";
+            this.lblFullname.Size = new System.Drawing.Size(52, 13);
+            this.lblFullname.TabIndex = 0;
+            this.lblFullname.Text = "Full name";
             // 
-            // textBox1
+            // txtFullname
             // 
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
+            this.txtFullname.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtFullname.Location = new System.Drawing.Point(191, 106);
+            this.txtFullname.Name = "txtFullname";
+            this.txtFullname.Size = new System.Drawing.Size(199, 20);
+            this.txtFullname.TabIndex = 1;
             // 
-            // label2
+            // lblSex
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Name = "label2";
+            this.lblSex.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSex.AutoSize = true;
+            this.lblSex.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblSex.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblSex.Location = new System.Drawing.Point(103, 245);
+            this.lblSex.Name = "lblSex";
+            this.lblSex.Size = new System.Drawing.Size(25, 13);
+            this.lblSex.TabIndex = 2;
+            this.lblSex.Text = "Sex";
             // 
-            // checkedListBox1
+            // checkBoxSex
             // 
-            resources.ApplyResources(this.checkedListBox1, "checkedListBox1");
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            resources.GetString("checkedListBox1.Items"),
-            resources.GetString("checkedListBox1.Items1")});
-            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkBoxSex.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.checkBoxSex.FormattingEnabled = true;
+            this.checkBoxSex.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.checkBoxSex.Location = new System.Drawing.Point(191, 236);
+            this.checkBoxSex.Name = "checkBoxSex";
+            this.checkBoxSex.Size = new System.Drawing.Size(199, 34);
+            this.checkBoxSex.TabIndex = 4;
             // 
-            // label3
+            // lblHomeAddress
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Name = "label3";
+            this.lblHomeAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblHomeAddress.AutoSize = true;
+            this.lblHomeAddress.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblHomeAddress.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblHomeAddress.Location = new System.Drawing.Point(103, 134);
+            this.lblHomeAddress.Name = "lblHomeAddress";
+            this.lblHomeAddress.Size = new System.Drawing.Size(76, 13);
+            this.lblHomeAddress.TabIndex = 5;
+            this.lblHomeAddress.Text = "Home Address";
             // 
             // label4
             // 
-            resources.ApplyResources(this.label4, "label4");
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(103, 160);
             this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Telephone";
             // 
-            // label5
+            // lblEmail
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Name = "label5";
+            this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblEmail.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblEmail.Location = new System.Drawing.Point(103, 186);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(38, 13);
+            this.lblEmail.TabIndex = 7;
+            this.lblEmail.Text = "E-mail:";
             // 
             // label6
             // 
-            resources.ApplyResources(this.label6, "label6");
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(399, 108);
             this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Notes";
             // 
-            // textBox2
+            // txtHomeAddress
             // 
-            resources.ApplyResources(this.textBox2, "textBox2");
-            this.textBox2.Name = "textBox2";
+            this.txtHomeAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtHomeAddress.Location = new System.Drawing.Point(191, 132);
+            this.txtHomeAddress.Name = "txtHomeAddress";
+            this.txtHomeAddress.Size = new System.Drawing.Size(199, 20);
+            this.txtHomeAddress.TabIndex = 9;
             // 
-            // textBox3
+            // txtTelephone
             // 
-            resources.ApplyResources(this.textBox3, "textBox3");
-            this.textBox3.Name = "textBox3";
+            this.txtTelephone.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTelephone.Location = new System.Drawing.Point(191, 158);
+            this.txtTelephone.Name = "txtTelephone";
+            this.txtTelephone.Size = new System.Drawing.Size(199, 20);
+            this.txtTelephone.TabIndex = 10;
             // 
-            // textBox4
+            // txtEmail
             // 
-            resources.ApplyResources(this.textBox4, "textBox4");
-            this.textBox4.Name = "textBox4";
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtEmail.Location = new System.Drawing.Point(191, 184);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(199, 20);
+            this.txtEmail.TabIndex = 11;
             // 
-            // textBox5
+            // txtNotes
             // 
-            resources.ApplyResources(this.textBox5, "textBox5");
-            this.textBox5.Name = "textBox5";
+            this.txtNotes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtNotes.Location = new System.Drawing.Point(440, 106);
+            this.txtNotes.Multiline = true;
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.Size = new System.Drawing.Size(341, 158);
+            this.txtNotes.TabIndex = 12;
             // 
-            // button2
+            // btnSave
             // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSave.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnSave.Location = new System.Drawing.Point(787, 106);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 35);
+            this.btnSave.TabIndex = 14;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // button3
+            // btnUpdate
             // 
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUpdate.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnUpdate.Location = new System.Drawing.Point(787, 147);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 35);
+            this.btnUpdate.TabIndex = 15;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // button4
+            // btnDelete
             // 
-            resources.ApplyResources(this.button4, "button4");
-            this.button4.BackColor = System.Drawing.Color.IndianRed;
-            this.button4.Name = "button4";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDelete.BackColor = System.Drawing.Color.IndianRed;
+            this.btnDelete.Location = new System.Drawing.Point(787, 188);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 35);
+            this.btnDelete.TabIndex = 16;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button5
+            // btnSearchAnotherUser
             // 
-            resources.ApplyResources(this.button5, "button5");
-            this.button5.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button5.Name = "button5";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnSearchAnotherUser.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSearchAnotherUser.BackColor = System.Drawing.Color.LightPink;
+            this.btnSearchAnotherUser.Location = new System.Drawing.Point(653, 40);
+            this.btnSearchAnotherUser.Name = "btnSearchAnotherUser";
+            this.btnSearchAnotherUser.Size = new System.Drawing.Size(128, 23);
+            this.btnSearchAnotherUser.TabIndex = 21;
+            this.btnSearchAnotherUser.Text = "Search Another User";
+            this.btnSearchAnotherUser.UseVisualStyleBackColor = false;
+            this.btnSearchAnotherUser.Click += new System.EventHandler(this.btnSearchAnotherUser_Click);
             // 
-            // button7
+            // btnSignOut
             // 
-            resources.ApplyResources(this.button7, "button7");
-            this.button7.BackColor = System.Drawing.Color.LightPink;
-            this.button7.Name = "button7";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btnSignOut.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSignOut.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btnSignOut.Location = new System.Drawing.Point(653, 69);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Size = new System.Drawing.Size(128, 23);
+            this.btnSignOut.TabIndex = 22;
+            this.btnSignOut.Text = "Sign Out";
+            this.btnSignOut.UseVisualStyleBackColor = false;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
             // 
-            // button8
+            // lblDateOfBirth
             // 
-            resources.ApplyResources(this.button8, "button8");
-            this.button8.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.button8.Name = "button8";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.lblDateOfBirth.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDateOfBirth.AutoSize = true;
+            this.lblDateOfBirth.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblDateOfBirth.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblDateOfBirth.Location = new System.Drawing.Point(103, 215);
+            this.lblDateOfBirth.Name = "lblDateOfBirth";
+            this.lblDateOfBirth.Size = new System.Drawing.Size(66, 13);
+            this.lblDateOfBirth.TabIndex = 23;
+            this.lblDateOfBirth.Text = "Date of Birth";
             // 
-            // label7
+            // dtDateOfBirth
             // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Name = "label7";
+            this.dtDateOfBirth.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtDateOfBirth.CustomFormat = "MMMM dd yyyy ";
+            this.dtDateOfBirth.Location = new System.Drawing.Point(191, 210);
+            this.dtDateOfBirth.Name = "dtDateOfBirth";
+            this.dtDateOfBirth.Size = new System.Drawing.Size(199, 20);
+            this.dtDateOfBirth.TabIndex = 26;
             // 
-            // dataGridView1
+            // dataListOf
             // 
-            resources.ApplyResources(this.dataGridView1, "dataGridView1");
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDoubleClick);
+            this.dataListOf.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataListOf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataListOf.Location = new System.Drawing.Point(106, 301);
+            this.dataListOf.Name = "dataListOf";
+            this.dataListOf.Size = new System.Drawing.Size(756, 240);
+            this.dataListOf.TabIndex = 27;
+            this.dataListOf.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataListOf_CellDoubleClick);
             // 
-            // dateTimePicker1
+            // txtPostalCode
             // 
-            resources.ApplyResources(this.dateTimePicker1, "dateTimePicker1");
-            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.txtPostalCode.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPostalCode.Location = new System.Drawing.Point(191, 276);
+            this.txtPostalCode.Name = "txtPostalCode";
+            this.txtPostalCode.Size = new System.Drawing.Size(199, 20);
+            this.txtPostalCode.TabIndex = 29;
             // 
-            // dataGridView2
+            // lblPostalCode
             // 
-            resources.ApplyResources(this.dataGridView2, "dataGridView2");
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView2_MouseDoubleClick);
+            this.lblPostalCode.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPostalCode.AutoSize = true;
+            this.lblPostalCode.BackColor = System.Drawing.SystemColors.Menu;
+            this.lblPostalCode.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblPostalCode.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblPostalCode.Location = new System.Drawing.Point(103, 278);
+            this.lblPostalCode.Name = "lblPostalCode";
+            this.lblPostalCode.Size = new System.Drawing.Size(64, 13);
+            this.lblPostalCode.TabIndex = 28;
+            this.lblPostalCode.Text = "Postal Code";
+            // 
+            // lblEHospital
+            // 
+            this.lblEHospital.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblEHospital.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblEHospital.Font = new System.Drawing.Font("Ravie", 30F);
+            this.lblEHospital.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblEHospital.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblEHospital.Location = new System.Drawing.Point(182, 31);
+            this.lblEHospital.Name = "lblEHospital";
+            this.lblEHospital.Size = new System.Drawing.Size(318, 61);
+            this.lblEHospital.TabIndex = 30;
+            this.lblEHospital.Text = "E-Hospital";
             // 
             // MainForm
             // 
-            resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Menu;
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(930, 590);
+            this.Controls.Add(this.lblEHospital);
+            this.Controls.Add(this.txtPostalCode);
+            this.Controls.Add(this.lblPostalCode);
+            this.Controls.Add(this.dataListOf);
+            this.Controls.Add(this.dtDateOfBirth);
+            this.Controls.Add(this.lblDateOfBirth);
+            this.Controls.Add(this.btnSignOut);
+            this.Controls.Add(this.btnSearchAnotherUser);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.txtNotes);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtTelephone);
+            this.Controls.Add(this.txtHomeAddress);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.checkedListBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblHomeAddress);
+            this.Controls.Add(this.checkBoxSex);
+            this.Controls.Add(this.lblSex);
+            this.Controls.Add(this.txtFullname);
+            this.Controls.Add(this.lblFullname);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
+            this.Text = "Dashboard";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListOf)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,27 +345,28 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblFullname;
+        private System.Windows.Forms.TextBox txtFullname;
+        private System.Windows.Forms.Label lblSex;
+        private System.Windows.Forms.CheckedListBox checkBoxSex;
+        private System.Windows.Forms.Label lblHomeAddress;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.TextBox txtHomeAddress;
+        private System.Windows.Forms.TextBox txtTelephone;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtNotes;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnSearchAnotherUser;
+        private System.Windows.Forms.Button btnSignOut;
+        private System.Windows.Forms.Label lblDateOfBirth;
+        private System.Windows.Forms.DateTimePicker dtDateOfBirth;
+        private System.Windows.Forms.DataGridView dataListOf;
+        private System.Windows.Forms.TextBox txtPostalCode;
+        private System.Windows.Forms.Label lblPostalCode;
+        private System.Windows.Forms.Label lblEHospital;
     }
 }

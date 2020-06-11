@@ -17,6 +17,7 @@ namespace E_Hospital
         public MainForm()
         {
             InitializeComponent();
+            DisplayData();
         }
 
         SqlConnection sqlConnection = new SqlConnection(
@@ -30,133 +31,75 @@ namespace E_Hospital
                 TrustServerCertificate=False;
                 Connection Timeout=30;");
 
+        SqlCommand sqlCommand;
+        SqlDataAdapter sqlDataAdapter;
+        DataTable dataTable;
+        int PatientId;
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-            if (textBox1.TextLength == 0)
-            {
-                MessageBox.Show("Please fill all the fields to save the patient!");
-            }
-            else if (textBox2.TextLength == 0)
-            {
-                MessageBox.Show("Please fill all the fields to save the patient!");
-            }
-            else if (checkedListBox1 == null)
-            {
-                MessageBox.Show("Please fill all the fields to save the patient!");
-            }
-            else if (textBox3.TextLength == 0)
-            {
-                MessageBox.Show("Please fill all the fields to save the patient!");
-            }
-            else if(textBox4.TextLength == 0)
-            {
-                MessageBox.Show("Please fill all the fields to save the patient!");
-            }
-            else if (textBox5.TextLength == 0)
-            {
-                MessageBox.Show("Please fill all the fields to save the patient!");
-            }
-            else
-            {
-                sqlConnection.Open();
-                String query = "INSERT INTO PatientInformation (PatientFullName,Address,DateofBirth,Gender,Email,Telephone,Notes) VALUES('" + textBox1.Text + "','" + textBox2.Text + "','" + dateTimePicker1.Text + "','" + checkedListBox1.Text + "','" + textBox4.Text + "','" + textBox3.Text + "','" + textBox5.Text + "')";
-                SqlDataAdapter SDA = new SqlDataAdapter(query, sqlConnection);
-                SDA.SelectCommand.ExecuteNonQuery();
-                sqlConnection.Close();
-                MessageBox.Show("Patient saved successfully!");
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (textBox1.TextLength == 0)
-            {
-                MessageBox.Show("Please enter name to update patient's info!");
-            }
-            else if (textBox3.TextLength == 0)
-            {
-                MessageBox.Show("Please enter phone number to  to update patient's info!!");
-            }
-            else if (textBox5.TextLength == 0)
-            {
-                MessageBox.Show("Please enter the notes to update them!");
-            }
-            else
-            {
-                sqlConnection.Open();
-                string query = "UPDATE PatientInformation SET PatientFullName = '" + textBox1.Text + "',Address = '" + textBox2.Text + "', DateofBirth = '" + dateTimePicker1.Text + "', Gender = '" + checkedListBox1.Text + "', Email = '" + textBox4.Text + "',Telephone = '" + textBox3.Text + "', Notes = '" + textBox5.Text + "'";
-                SqlDataAdapter SDA = new SqlDataAdapter(query, sqlConnection);
-                SDA.SelectCommand.ExecuteNonQuery();
-                sqlConnection.Close();
-                MessageBox.Show("Patient data updated successfully!");
-            }
-        }
-
-        private void button5_Click(object sender, EventArgs e)
+        //Save
+        private void btnSave_Click(object sender, EventArgs e)
         {
             sqlConnection.Open();
-            String query = "SELECT PatientFullName, Address, DateofBirth, Gender, Email, Telephone FROM PatientInformation";
-            string query1 = "SELECT Notes FROM PatientInformation";
-            SqlDataAdapter SDA = new SqlDataAdapter(query, sqlConnection);
-            SqlDataAdapter SDA1 = new SqlDataAdapter(query1, sqlConnection);
-            DataTable dt = new DataTable();
-            DataTable dt1 = new DataTable();
-            SDA.Fill(dt);
-            SDA1.Fill(dt1);
-            dataGridView1.DataSource = dt;
-            dataGridView2.DataSource = dt1;
+            sqlCommand = new SqlCommand
+            ("insert into PatientInformation values('" + txtFullname.Text + "','" + txtHomeAddress.Text + "','" + txtPostalCode.Text + "','" + dtDateOfBirth.Text + "','" + checkBoxSex.Text + "','" + txtEmail.Text + "', '" + txtTelephone.Text + "','" + txtNotes.Text + "'  )",
+                sqlConnection);
+            sqlCommand.ExecuteNonQuery();
+            MessageBox.Show("Your data has been saved in the database!");
+            sqlConnection.Close();
+            DisplayData();
+            Clear();
+        }
+
+        public void DisplayData()
+        {
+            sqlConnection.Open();
+            sqlDataAdapter = new SqlDataAdapter("select * from PatientInformation", sqlConnection);
+            dataTable = new DataTable();
+            sqlDataAdapter.Fill(dataTable);
+            dataListOf.DataSource = dataTable;
             sqlConnection.Close();
         }
 
-        private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        public void Clear()
         {
-            textBox1.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-            textBox2.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-            dateTimePicker1.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
-            checkedListBox1.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
-            textBox4.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
-            textBox3.Text = dataGridView1.SelectedRows[0].Cells[6].Value.ToString();
-            textBox5.Text = dataGridView2.SelectedRows[0].Cells[7].Value.ToString();
-
+            txtFullname.Text = "";
+            txtHomeAddress.Text = "";
+            txtPostalCode.Text = "";
+            dtDateOfBirth.Text = "";
+            checkBoxSex.Text = "";
+            txtEmail.Text = "";
+            txtTelephone.Text = "";
+            txtNotes.Text = "";
         }
 
-        private void dataGridView2_MouseDoubleClick(object sender, MouseEventArgs e)
+        //Update
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            textBox1.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-            textBox2.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-            dateTimePicker1.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
-            checkedListBox1.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
-            textBox4.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
-            textBox3.Text = dataGridView1.SelectedRows[0].Cells[6].Value.ToString();
-            textBox5.Text = dataGridView2.SelectedRows[0].Cells[7].Value.ToString();
+            sqlConnection.Open();
+            sqlCommand = new SqlCommand(
+                "update PatientInformation set PatientFullName='" + txtFullname.Text + "',Address='" +
+                txtHomeAddress.Text + "',PostalCode='" + txtPostalCode.Text + "',DateOfBirth='" + dtDateOfBirth.Text +
+                "',Gender='" + checkBoxSex.Text + "',Email='" + txtEmail.Text + "', Telephone='" + txtTelephone.Text +
+                "',Notes='" + txtNotes.Text + "'where PatientId='" + PatientId + "'", sqlConnection);
+            sqlCommand.ExecuteNonQuery();
+            MessageBox.Show("Data has been updated!");
+
+            sqlConnection.Close();
+            DisplayData();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        //Delete
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (textBox1.TextLength == 0)
-            {
-                MessageBox.Show("Please Enter name to Delete!");
-            }
-            else
-            {
-                sqlConnection.Open();
-                String query = "DELETE FROM PatientInformation where PatientFullName = '" + textBox1.Text + "'";
-                SqlDataAdapter SDA = new SqlDataAdapter(query, sqlConnection);
-                SDA.SelectCommand.ExecuteNonQuery();
-                sqlConnection.Close();
-                MessageBox.Show("Medical card deleted!");
-            }
+            sqlConnection.Open();
+            sqlCommand = new SqlCommand("delete from Patientinformation where PatientId='" + PatientId + "'", sqlConnection);
+            sqlCommand.ExecuteNonQuery();
+            MessageBox.Show("Data has been deleted!");
+            sqlConnection.Close();
+            DisplayData();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            InitializeComponent();
-
-        }
-
-        private void button8_Click(object sender, EventArgs e)
+        private void btnSignOut_Click(object sender, EventArgs e)
         {
             DialogResult dialog = MessageBox.Show("Do you want to sign out for sure?",
              "Sign out", MessageBoxButtons.YesNo);
@@ -168,7 +111,7 @@ namespace E_Hospital
             }
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void btnSearchAnotherUser_Click(object sender, EventArgs e)
         {
             IdForm idform = new IdForm();
             this.Hide();
@@ -190,14 +133,17 @@ namespace E_Hospital
             }
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private void dataListOf_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
+            PatientId = Convert.ToInt32(dataListOf.Rows[e.RowIndex].Cells[0].Value.ToString());
+            txtFullname.Text = dataListOf.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtHomeAddress.Text = dataListOf.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtPostalCode.Text = dataListOf.Rows[e.RowIndex].Cells[3].Value.ToString();
+            dtDateOfBirth.Text = dataListOf.Rows[e.RowIndex].Cells[4].Value.ToString();
+            checkBoxSex.Text = dataListOf.Rows[e.RowIndex].Cells[5].Value.ToString();
+            txtEmail.Text = dataListOf.Rows[e.RowIndex].Cells[6].Value.ToString();
+            txtTelephone.Text = dataListOf.Rows[e.RowIndex].Cells[7].Value.ToString();
+            txtNotes.Text = dataListOf.Rows[e.RowIndex].Cells[8].Value.ToString();
         }
     }
 
