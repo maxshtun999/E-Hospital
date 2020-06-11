@@ -80,7 +80,7 @@ namespace E_Hospital
                     sqlCommand.ExecuteNonQuery();
                     MessageBox.Show("Your data has been saved in the database!");
                     sqlConnection.Close();
-                    DisplayData();
+                    //DisplayData();
                     Clear();
                 }
                 else
@@ -92,6 +92,7 @@ namespace E_Hospital
 
         }
 
+        //DisplayData DISABLE
         public void DisplayData()
         {
             //sqlConnection.Open();
@@ -164,7 +165,7 @@ namespace E_Hospital
                     MessageBox.Show("Data has been updated!");
 
                     sqlConnection.Close();
-                    DisplayData();
+                    //DisplayData();
                     Clear();
                 }
                 else
@@ -215,7 +216,7 @@ namespace E_Hospital
                 sqlCommand.ExecuteNonQuery();
                 MessageBox.Show("Data has been deleted!");
                 sqlConnection.Close();
-                DisplayData();
+                //DisplayData();
                 Clear();
             }
         }

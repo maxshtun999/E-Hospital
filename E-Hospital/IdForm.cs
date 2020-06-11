@@ -14,8 +14,6 @@ namespace E_Hospital
 {
     public partial class IdForm : Form
     {
-        //public static string ValueTxtSearch;
-
         public IdForm()
         {
             InitializeComponent();
