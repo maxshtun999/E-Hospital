@@ -373,10 +373,10 @@
         private System.Windows.Forms.Button btnSignOut;
         private System.Windows.Forms.Label lblDateOfBirth;
         private System.Windows.Forms.DateTimePicker dtDateOfBirth;
-        private System.Windows.Forms.DataGridView dataListOf;
         private System.Windows.Forms.TextBox txtPostalCode;
         private System.Windows.Forms.Label lblPostalCode;
         private System.Windows.Forms.Label lblEHospital;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        public System.Windows.Forms.DataGridView dataListOf;
     }
 }

@@ -94,12 +94,12 @@ namespace E_Hospital
 
         public void DisplayData()
         {
-            sqlConnection.Open();
-            sqlDataAdapter = new SqlDataAdapter("select * from PatientInformation", sqlConnection);
-            dataTable = new DataTable();
-            sqlDataAdapter.Fill(dataTable);
-            dataListOf.DataSource = dataTable;
-            sqlConnection.Close();
+            //sqlConnection.Open();
+            //sqlDataAdapter = new SqlDataAdapter("select * from PatientInformation", sqlConnection);
+            //dataTable = new DataTable();
+            //sqlDataAdapter.Fill(dataTable);
+            //dataListOf.DataSource = dataTable;
+            //sqlConnection.Close();
         }
 
         public void Clear()
@@ -254,7 +254,7 @@ namespace E_Hospital
             }
         }
 
-        private void dataListOf_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        public void dataListOf_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             PatientId = Convert.ToInt32(dataListOf.Rows[e.RowIndex].Cells[0].Value.ToString());
             txtFullname.Text = dataListOf.Rows[e.RowIndex].Cells[1].Value.ToString();
