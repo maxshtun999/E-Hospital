@@ -147,17 +147,33 @@ namespace E_Hospital
             }
             else
             {
-                sqlConnection.Open();
-                sqlCommand = new SqlCommand(
-                    "update PatientInformation set PatientFullName='" + txtFullname.Text + "',Address='" +
-                    txtHomeAddress.Text + "',PostalCode='" + txtPostalCode.Text + "',DateOfBirth='" + dtDateOfBirth.Text +
-                    "',Gender='" + checkBoxSex.Text + "',Email='" + txtEmail.Text + "', Telephone='" + txtTelephone.Text +
-                    "',Notes='" + txtNotes.Text + "'where PatientId='" + PatientId + "'", sqlConnection);
-                sqlCommand.ExecuteNonQuery();
-                MessageBox.Show("Data has been updated!");
+                string pattern = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+                if (Regex.IsMatch(txtEmail.Text, pattern))
+                {
+                    errorProvider1.Clear();
+                    sqlConnection.Open();
+                    sqlCommand = new SqlCommand(
+                        "update PatientInformation set PatientFullName='" + txtFullname.Text + "',Address='" +
+                        txtHomeAddress.Text + "',PostalCode='" + txtPostalCode.Text + "',DateOfBirth='" + dtDateOfBirth.Text +
+                        "',Gender='" + checkBoxSex.Text + "',Email='" + txtEmail.Text + "', Telephone='" + txtTelephone.Text +
+                        "',Notes='" + txtNotes.Text + "'where PatientId='" + PatientId + "'", sqlConnection);
 
-                sqlConnection.Close();
-                DisplayData();
+
+
+                    sqlCommand.ExecuteNonQuery();
+                    MessageBox.Show("Data has been updated!");
+
+                    sqlConnection.Close();
+                    DisplayData();
+                    Clear();
+                }
+                else
+                {
+                    errorProvider1.SetError(this.txtEmail, "Please provide correct email address");
+                    return;
+                }
+
+                
             }
         }
 
@@ -166,31 +182,31 @@ namespace E_Hospital
         {
             if (txtFullname.TextLength == 0)
             {
-                MessageBox.Show("Please fill all the fields to Delete the patient!");
+                MessageBox.Show("First double click on data which you want to delete then press DELETE button!");
             }
             else if (txtHomeAddress.TextLength == 0)
             {
-                MessageBox.Show("Please fill all the fields to Delete the patient!");
+                MessageBox.Show("First double click on data which you want to delete then press DELETE button!");
             }
             else if (dtDateOfBirth == null)
             {
-                MessageBox.Show("Please fill all the fields to Delete the patient!");
+                MessageBox.Show("First double click on data which you want to delete then press DELETE button!");
             }
             else if (txtEmail.TextLength == 0)
             {
-                MessageBox.Show("Please fill all the fields to Delete the patient!");
+                MessageBox.Show("First double click on data which you want to delete then press DELETE button!");
             }
             else if (txtTelephone.TextLength == 0)
             {
-                MessageBox.Show("Please fill all the fields to Delete the patient!");
+                MessageBox.Show("First double click on data which you want to delete then press DELETE button!");
             }
             else if (txtNotes.TextLength == 0)
             {
-                MessageBox.Show("Please fill all the fields to Delete the patient!");
+                MessageBox.Show("First double click on data which you want to delete then press DELETE button!");
             }
             else if (txtPostalCode.TextLength == 0)
             {
-                MessageBox.Show("Please fill all the fields to Delete the patient!");
+                MessageBox.Show("First double click on data which you want to delete then press DELETE button!");
             }
             else
             {
@@ -200,6 +216,7 @@ namespace E_Hospital
                 MessageBox.Show("Data has been deleted!");
                 sqlConnection.Close();
                 DisplayData();
+                Clear();
             }
         }
 
@@ -258,5 +275,6 @@ namespace E_Hospital
                 e.Handled = true;
             }
         }
+
     }
 }
