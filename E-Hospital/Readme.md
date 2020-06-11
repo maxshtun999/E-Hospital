@@ -38,4 +38,4 @@ TODO list:
 
 ~~18. Refresh  dataGridView after save new user record.~~
 
-19. Create if or try catch blocks for preventing user to send empty data or wrong type of data to database.
+~~19. Create if or try catch blocks for preventing user to send empty data or wrong type of data to database.~~
