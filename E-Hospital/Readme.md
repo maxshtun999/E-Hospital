@@ -24,6 +24,16 @@ TODO list:
 
 ~~11. "Cannot insert value NULL in PatientID column" error while saving user.~~
 
-12. Update user by click choosing his row in DB.
+~~12. Refresh  dataGridView after updating user record.~~
 
-13. Delete user by click choosing his row in DB.
+~~13. Refresh  dataGridView after deleting user record.~~
+
+~~14. Clear input after saving user.~~
+
+~~15. Make string input impossible in "telephone" field.~~
+
+~~16. Check if user input is in correct data format in "email" field.~~
+
+17. Make IDForm responsive.
+
+~~18. Refresh  dataGridView after save new user record.~~
