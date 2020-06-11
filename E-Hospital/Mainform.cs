@@ -117,28 +117,90 @@ namespace E_Hospital
         //Update
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            sqlConnection.Open();
-            sqlCommand = new SqlCommand(
-                "update PatientInformation set PatientFullName='" + txtFullname.Text + "',Address='" +
-                txtHomeAddress.Text + "',PostalCode='" + txtPostalCode.Text + "',DateOfBirth='" + dtDateOfBirth.Text +
-                "',Gender='" + checkBoxSex.Text + "',Email='" + txtEmail.Text + "', Telephone='" + txtTelephone.Text +
-                "',Notes='" + txtNotes.Text + "'where PatientId='" + PatientId + "'", sqlConnection);
-            sqlCommand.ExecuteNonQuery();
-            MessageBox.Show("Data has been updated!");
+            if (txtFullname.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to update the patient!");
+            }
+            else if (txtHomeAddress.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to update the patient!");
+            }
+            else if (dtDateOfBirth == null)
+            {
+                MessageBox.Show("Please fill all the fields to update the patient!");
+            }
+            else if (txtEmail.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to update the patient!");
+            }
+            else if (txtTelephone.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to update the patient!");
+            }
+            else if (txtNotes.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to update the patient!");
+            }
+            else if (txtPostalCode.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to update the patient!");
+            }
+            else
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand(
+                    "update PatientInformation set PatientFullName='" + txtFullname.Text + "',Address='" +
+                    txtHomeAddress.Text + "',PostalCode='" + txtPostalCode.Text + "',DateOfBirth='" + dtDateOfBirth.Text +
+                    "',Gender='" + checkBoxSex.Text + "',Email='" + txtEmail.Text + "', Telephone='" + txtTelephone.Text +
+                    "',Notes='" + txtNotes.Text + "'where PatientId='" + PatientId + "'", sqlConnection);
+                sqlCommand.ExecuteNonQuery();
+                MessageBox.Show("Data has been updated!");
 
-            sqlConnection.Close();
-            DisplayData();
+                sqlConnection.Close();
+                DisplayData();
+            }
         }
 
         //Delete
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            sqlConnection.Open();
-            sqlCommand = new SqlCommand("delete from Patientinformation where PatientId='" + PatientId + "'", sqlConnection);
-            sqlCommand.ExecuteNonQuery();
-            MessageBox.Show("Data has been deleted!");
-            sqlConnection.Close();
-            DisplayData();
+            if (txtFullname.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to Delete the patient!");
+            }
+            else if (txtHomeAddress.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to Delete the patient!");
+            }
+            else if (dtDateOfBirth == null)
+            {
+                MessageBox.Show("Please fill all the fields to Delete the patient!");
+            }
+            else if (txtEmail.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to Delete the patient!");
+            }
+            else if (txtTelephone.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to Delete the patient!");
+            }
+            else if (txtNotes.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to Delete the patient!");
+            }
+            else if (txtPostalCode.TextLength == 0)
+            {
+                MessageBox.Show("Please fill all the fields to Delete the patient!");
+            }
+            else
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("delete from Patientinformation where PatientId='" + PatientId + "'", sqlConnection);
+                sqlCommand.ExecuteNonQuery();
+                MessageBox.Show("Data has been deleted!");
+                sqlConnection.Close();
+                DisplayData();
+            }
         }
 
         private void btnSignOut_Click(object sender, EventArgs e)
